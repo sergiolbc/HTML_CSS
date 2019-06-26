@@ -1,0 +1,106 @@
+<!-----------------------------------------------------------------------------------------------------------------------------------------
+Sergio Gonzalez
+
+calc.html
+12/7/18
+
+In a file called calc.html, create a simply calculator. Using techniques from the chapter, use text boxes to get two numbers, then allow 
+the user to click a button for the operation they wish to complete: addition, subtraction, multiplication, or division. Output the result 
+to a third textbox. 
+
+------------------------------------------------------------------------------------------------------------------------------------------>
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Calc</title>		
+	</head>	
+	<body>
+		<h1>Calc</h1>
+		
+		<form name = "calcForm">
+			Enter Number: <input type = "number" step = "any" value = "0" name = "num1"/> <!-- step = "any" makes sure the user is only allowed to enter numbers -->
+			
+			<br/><br/>
+			
+			Enter Number: <input type = "number" step = "any" value = "0" name = "num2"/> <!-- step = "any" makes sure the user is only allowed to enter numbers -->
+			
+			<br/><br/>
+
+			<input type = "button" id = "add" value = " + "/>
+			<input type = "button" id = "sub" value = " - "/>
+			<input type = "button" id = "mul" value = " x "/>
+			<input type = "button" id = "div" value = " / "/>
+			<input type = "button" id = "clr" value = "clr"/>
+			
+			<br/><br/>
+			
+			Answer: <input type = "number" name = "answer" value = "0" readonly = "readonly" />			
+		
+		</form>
+		
+		<script>
+			function checkFilled()
+			{				
+				//make sure both are numbers entered, mathematical selection is already preset
+				if (document.calcForm.num1.value == "" || document.calcForm.num2.value == "")
+				{
+					alert("Please enter two numbers.");
+				
+				}
+				
+				else
+				{
+					//select which button was picked
+					var selected = event.target || event.srcElement;
+					
+					//variables needed
+					var num1 = parseFloat(calcForm.num1.value);
+					var num2 = parseFloat(calcForm.num2.value);
+					var ans = 0;
+					
+					//do some maths
+					switch(selected.value)
+					{
+						case " + ":
+							ans = num1 + num2;
+							break;
+						
+						case " - ":
+							ans = num1 - num2;
+							break;
+							
+						case " / ":
+							ans = parseFloat(num1 / num2);
+							break;
+							
+						case " x ":
+							ans = num1 * num2;
+							break;
+							
+						default:
+							calcForm.num1.value = 0;
+							calcForm.num2.value = 0;
+							calcForm.answer.value = 0;
+					
+					}
+					
+					//change answer text box to new value
+					calcForm.answer.value = ans;
+
+				}
+				
+			}
+			
+			//add event listener to each button
+			document.getElementById("add").addEventListener("click", checkFilled);
+			document.getElementById("sub").addEventListener("click", checkFilled);
+			document.getElementById("mul").addEventListener("click", checkFilled);
+			document.getElementById("div").addEventListener("click", checkFilled);
+			document.getElementById("clr").addEventListener("click", checkFilled);
+			
+		</script>
+
+	</body>
+</html>

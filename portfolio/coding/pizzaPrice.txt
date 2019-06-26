@@ -1,0 +1,128 @@
+<!-----------------------------------------------------------------------------------------------------------------------------------------
+Sergio Gonzalez
+
+pizzaPrice.html
+12/1/18
+
+Modify your pizza form from the lab, saving it with the new name pizzaPrice.html. Add text to indicate prices from the different options. 
+For example, a large pizza may be $15, while a medium is $12. Additional options should result in small add-on charges (ex: $1 per 
+topping). All orders should add a 10% sales tax.
+
+When you user click the button to place the order, use an alert box, text box, or text area to output a description of the order and a total price.
+
+------------------------------------------------------------------------------------------------------------------------------------------>
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Pizza Price</title>		
+		
+		<script>
+			function checkName()
+			{				
+				//make sure a name is entered, other fields already have prechosen selections
+				if (document.pizzaForm.userName.value == "" || document.pizzaForm.userName.value == null)
+				{
+					alert("Please enter your name!");
+				
+				}
+				
+				else
+				{
+					//variables needed
+					var items = document.getElementsByName('toppings');
+					var extras = "";
+					var price = 0;
+					
+					//set price to pizza size selected
+					switch(pizzaForm.size.value)
+					{
+						case "large":
+							price = 15;
+							break;
+						
+						case "medium":
+							price = 12;
+							break;
+							
+						case "small":
+							price = 9;
+							break;
+							
+						case "personal":
+							price = 6;
+							break;
+					
+					}
+					
+					//checks which toppings were checked and throws in extras 
+					for(x = 0; x < items.length; x++)
+					{
+						if(items[x].checked)
+						{
+							extras += (items[x].value + "\n");
+							price++; //adds $1 for each topping
+						
+						}
+					
+					}
+					
+					//standard script if no toppings added
+					var confScript = "Thanks for the order, " + pizzaForm.userName.value  + "\n\nYour total is $" + price
+							+ "\n\nYour " + pizzaForm.size.value + " " + pizzaForm.crust.value + " crust pizza will be ready soon!";
+					
+					//if toppings were added, add them to script
+					if(extras != "")
+						confScript += "\n\nAdditional toppings selected:\n" + extras;
+					
+					//display script
+					alert(confScript);
+				
+				}
+				
+			}
+
+			
+		</script>
+	</head>	
+	<body>
+		<h1>Pizza Price</h1>
+		
+		<form name = "pizzaForm" onsubmit = "checkName()">
+			Name: <input type = "text" name = "userName"/>
+			
+			<br/><br/>
+			
+			Large ($15): <input type = "radio" name = "size" value = "large" checked = "checked"/>
+			Medium ($12): <input type = "radio" name = "size" value = "medium"/>
+			Small ($9): <input type = "radio" name = "size" value = "small"/>
+			Personal ($6): <input type = "radio" name = "size" value = "personal"/>
+			
+			<br/><br/>
+			
+			Pick a crust: 
+			<select name = "crust">
+				<option value = "thin">Thin</option>
+				<option value = "regular">Regular</option>
+				<option value = "pan">Pan</option>
+				<option value = "stuffed">Stuffed</option>
+			
+			</select>
+			
+			<br/>
+			
+			<p>Select your additional toppings ($1 for each):</p>
+			Pepperoni: <input type = "checkbox" name = "toppings" value = "Pepperoni"/>
+			Ham: <input type = "checkbox" name = "toppings" value = "Ham"/>
+			Sausage: <input type = "checkbox" name = "toppings" value = "Sausage"/>
+			Steak: <input type = "checkbox" name = "toppings" value = "Steak"/>
+			
+			<br/><br/>
+			
+			<input type = "submit" value = "Submit Order"/>
+		
+		</form>
+
+	</body>
+</html>
