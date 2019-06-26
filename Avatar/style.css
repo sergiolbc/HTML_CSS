@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{background-color:#90C0CB;}
+
+#top{width:740px; margin:auto; background-color:#D8783E; border-radius: 15px;}
+
+header{
+	height:200px;
+	padding-left:20;
+	padding-top:20px;
+	}
+
+
+nav a:link{
+	font-family:garamond;
+	padding-left:25;
+	padding-right:25;
+	font-size:18px;
+	color:black;
+	font-weight:bold;
+	text-align:center;
+	}
+
+a:visited{color:black;}
+a:hover{color:black;}
+a:active{color:black;}
+
+h2 {text-align:center; text-decoration: underline;}
+h5 {text-align:center; font-style:italic;}
+
+section{padding-left:10px; padding-right:10px; background-color:#F0D89C; height:650px;}
+
+footer{text-align:center; padding:5px; height:120px; background-color:#D8783E;}
+
+.item{font-size:15; font-family:arial;}
+
+.item_picright{float:right; height:210px; border:1px solid; margin:0 0 0 5px; border-radius: 15px;}
+
+.item_picmiddle{display:block; margin-left: auto; margin-right: auto; height:180px; border-radius: 15px;}
+
+.item_picleft{float:left; height:210px; border:1px solid; margin:0 5px 0 0; border-radius: 15px;}
+
+.font_center{text-align:center;}
+
+.header_pic{
+	display:block; 
+	margin-left:auto; 
+	margin-right:auto; 
+	width:700px; 
+	border:1px solid; 
+	border-top-left-radius: 15px; 
+	border-top-right-radius: 15px;}
+
