@@ -1,0 +1,214 @@
+@charset "utf-8";
+/* CSS Document */
+
+#top{
+	width: 1100px;
+	margin: auto;
+	background-color: #ECEFF1;
+	border-radius: 7px;
+}
+
+header{
+	padding-top:1px;
+	padding-bottom:5px;
+	text-align: center;
+	height: 90px;
+	font-size: 26px;
+	font-style: normal;
+	font-weight: 100;
+	background-color: #0b212f;
+	color: white;
+	font-family: vollkorn, serif;
+	border-radius: 5px 5px 0 0;
+}
+
+nav{
+	width: 130px;
+	height: 544px;
+	background-color: #a2b4c3;
+	float: left;
+	font-style: normal;
+	font-weight: 100;
+	border-right: 2px solid #000000;
+	border-bottom: 2px solid #000000;
+	border-top: 2px solid #000000;
+}
+
+nav a:link{
+	display:block;
+	height:25px; 
+	border-bottom:2px solid;
+	padding:10px;
+	padding-top:15px;
+	color:black;
+	font-size:20px;
+	text-decoration: none;
+	font-weight:bold;
+	font-family: vollkorn, serif;
+}
+
+nav a:visited{color:black;}
+
+nav a:hover{color:white;}
+
+a:link{text-decoration: none; color: #019B94;}
+
+a:visited{color: #019B94;}
+
+a:hover{color: #a2b4c3;}
+
+a:active{color: #0b212f;}
+
+body{
+	background-image: url("images/feast.jpg");
+	background-attachment: fixed;
+	background-position: 50% 100%;
+	font-size: 20px;
+}
+
+footer{
+	width: 1090px;
+	margin: auto;
+	text-align: center;
+	padding: 5px;
+	height: 70px;
+	font-style: normal;
+	font-weight: 200;
+	border-top: 2px solid #000000;
+	border-radius: 0 0 5px 5px;
+	background-color: #0b212f;
+	color: white;
+	overflow: auto;
+	
+}
+
+footer p a:link{text-decoration: none; color: #019B94;}
+
+footer p a:visited{color: #019B94;}
+
+footer p a:hover{color: #a2b4c3;}
+
+/***QUOTES & LINES***/
+
+.quote{text-align:center; font-style:italic; font-family: merienda-one, cursive; width:80%; padding-left: 10%;}
+
+hr.quoteline {width:80%; height:1px;}
+
+
+/***HOUSE COLORS LINKS***/
+
+.gryffindorNav:hover{background-color: #941B08; border-bottom: 2px solid #000000;}
+
+.ravenclawNav:hover{background-color: #071A80; border-bottom: 2px solid #000000;}
+
+.hufflepuffNav:hover{background-color: #F1F31C; border-bottom: 2px solid #000000;}
+
+.slytherinNav:hover{background-color: #154C07; border-bottom: 2px solid #000000;}
+
+.homeNav:hover{color:white; border-bottom: 2px solid #000000;}
+
+.gryffindor:hover{background-color: #941B08; color: white;}
+
+.ravenclaw:hover{background-color: #071A80; color: white;}
+
+.hufflepuff:hover{background-color: #F1F31C; color: white;}
+
+.slytherin:hover{background-color: #154C07; color: white;}
+
+
+/***ITEM***/
+
+.item{font-size:22; font-weight: bold; font-family: Arial; padding-left: 100px; padding-right: 100px;}
+			
+.item_pictop{height:544px; width:968px; border-bottom: 2px solid #000000; border-top: 2px solid #000000;}
+
+.item_link{font-weight:bold;}
+
+.item_picright{float:right; height:290px; border:1px solid; margin-left: 5px; border-radius: 5px;}
+
+.item_picleft{float:left; height:310px; border:1px solid; margin-right: 5px; border-radius: 5px;}
+
+.item_picfounder{float:right; height:400px; border:1px solid; margin-left: 10px; border-radius: 5px; margin-top: 5px;}
+
+.item_picflag{float:left; height:225px; border:1px solid; margin-right: 10px; margin-top: 10px; border-radius: 5px;}
+
+
+/***TABLE***/
+
+.table {border-collapse:collapse; margin:auto; width: 80%;}
+
+.table td, th {border:solid 2px black; padding:5px; text-align:center;}
+
+#gryffindor {background-color: #941B08; color: #FFC500;}
+
+#ravenclaw {background-color: #071A80; color: #946B2D;}
+
+#hufflepuff {background-color: #F1F31C; color: black;}
+
+#slytherin {background-color: #154C07; color: #AAAAAA;}
+
+/***MEDIA***/
+
+video {
+    margin: auto;
+    width: 90%;
+    display: block;
+    border-radius: 15px;
+    -webkit-box-shadow: 3px 3px 15px rgba(0,0,0,0.70);
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.70);
+	
+}
+
+
+@-ms-viewport{
+  width: device-width;
+}
+
+@media only screen and (max-width:768px){
+	#top{ width: 100%; }
+	
+	header{font-size: 90%;}
+	
+	nav{width:100%; height: 50px; display:flex; border-bottom: none;}
+	
+	nav a:link{margin: auto; font-size: 2.7vw;}
+	
+	footer{font-size: 3vw; width:99%; height: 85;}
+	
+	.item{font-size: 3vw; padding-left: 8%; padding-right: 8%;}
+	
+	.item_pictop{width: 100%; height: 100%;}
+	
+	.item_picfounder{height:300px; }
+
+	.item_picflag{height:150px;}
+	
+	.item_picright{width: 55%; height: 55%;}
+	
+	.item_picleft{width: 55%; height: 55%;}
+	
+	.quote{width:98%; padding: 1%; font-size: 2.3vw;}
+	
+	hr.quoteline {width:100%;}
+	
+}
+
+
+
+@media only screen and (max-width:480px){
+	
+	nav{display:block; height:258px;}
+	
+	nav a:link{width: 95%; text-align: center;}
+	
+	.item_picflag{width:90%; height:90%; float:none; display:block; margin-left: auto; margin-right: auto; margin-top: 20px}
+	
+	.item_picfounder{width:90%; height:90%; float:none; display:block; margin-left: auto; margin-right: auto;}
+	
+	.item_picright{width:90%; height:90%; float:none; display:block; margin-left: auto; margin-right: auto;}
+	
+	.item_picleft{width:90%; height:90%; float:none; display:block; margin-left: auto; margin-right: auto;}
+	
+	video{width: 100%;}
+	
+}
